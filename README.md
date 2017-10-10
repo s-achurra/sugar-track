@@ -1,24 +1,30 @@
-# README
+# Sugar Track (Sugar Level Tracker and Analytics)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Key Requirements :
+  - ### Store user provided blood sugar levels
+  - ### Display levels overtime in a useful manner back to the user
 
-Things you may want to cover:
+## Models
+- Users -> Devise
+- Post -> owner:userID level:number date:date
 
-* Ruby version
+## Features
+- Users may log via the site
+- Data will be graphed and interactive (Chart.js?)
 
-* System dependencies
+- Texts will be scheduled as defined by the user
+- Users will receive text prompts allowing them to create a log via text
 
-* Configuration
+## Tools
+- Devise -> User Authentication
+- Bootstraps -> Basic Formating
+- NPM -> Fornt-end Package Manger
+- Chart.js -> Data Representation
+- React - Redux -> Front-end Data Management
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ToDo
+- Add rspec, capybara and bi
+- Setup DB
+- Create tests and make Logs Model
+- Add Devise
+...
