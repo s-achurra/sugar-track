@@ -18,13 +18,21 @@
 ## Tools
 - Devise -> User Authentication
 - Bootstraps -> Basic Formating
-- NPM -> Fornt-end Package Manger
+- NPM -> Front-end Package Manger
 - Chart.js -> Data Representation
 - React - Redux -> Front-end Data Management
 
 ## ToDo
-- Add rspec, capybara and bi
-- Setup DB
-- Create tests and make Logs Model
-- Add Devise
+- <s>Add rspec, capybara and bi</s>
+- <s>Setup DB</s>
+- <s>Make post model</s>
+- <s>Add Devise</s>
+- Setup Splash Page
+- Setup homepage
+- Add Posts List Page
+- Add Create Post form
+- Add Chart.js
+- Create tests
+- Setup Trillio
+
 ...
