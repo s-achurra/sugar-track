@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Overtime
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .container
+      .row
+        .col-md-12
+          - if current_user
+            = "Logged in as #{current_user.email}" if current_user
+            = button_to "Logout", destroy_user_session_path, method: :delete
+          = yield
