@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+@user = User.create!(email: 'test@test.com',
+                    password: 'password',
+                    password_confirmation: 'password')
+
+puts "Created test@test.com user"
+
+post_count = 10
+
+post_count.times do |post|
+  Post.create!(user: @user, level: Random.new.rand(89..120))
+end
+
+puts "Created #{post_count} posts"
