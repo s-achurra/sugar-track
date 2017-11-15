@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.posts_by(current_user)
+    @posts = current_user.posts
+    @levels = current_user.post_data
   end
 end

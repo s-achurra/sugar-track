@@ -5,4 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+
+  def post_data
+    posts = self.posts
+    data = Hash.new
+
+    posts.each { |post| data[post.created_at.to_date] = post.level}
+
+    data
+  end
 end
