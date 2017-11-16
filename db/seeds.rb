@@ -13,8 +13,10 @@ puts "Created test@test.com user"
 
 post_count = 10
 
-post_count.times do |post|
-  Post.create!(user: @user, level: Random.new.rand(89..120))
+post_count.times do |i|
+  Post.create!(user: @user,
+              level: Random.new.rand(89..120),
+              created_at: Date.today + i.days)
 end
 
 puts "Created #{post_count} posts"
