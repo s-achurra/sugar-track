@@ -1,0 +1,26 @@
+
+%div
+  %h2
+    %span Level:
+    = @post.level
+  %h2
+    %span Date:
+    = @post.created_at.to_date
+.well
+  %div
+    %h3
+      %span Notes:
+      = @post.notes
+= link_to 'Home',
+  posts_path,
+  class: "btn btn-primary"
+= link_to 'Edit',
+  edit_post_path(@post),
+  class: "btn btn-primary",
+  id: "edit_#{@post.id}"
+= link_to 'Delete',
+  post_path(@post),
+  method: :delete,
+  id: "delete_#{@post.id}",
+  class: 'btn btn-primary',
+  data: { confirm: 'Are you sure?' }
