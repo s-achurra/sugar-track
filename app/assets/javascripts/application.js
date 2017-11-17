@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require Chart.bundle
 //= require chartkick
+//= require moment
+//= require daterangepicker
 //= require_tree .
