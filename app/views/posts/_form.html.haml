@@ -1,7 +1,7 @@
 = form_for @post, class: "form-horizontal" do |f|
   .form-group
     = f.label :level, class: "col-sm-2 control-label"
-    = f.number_field :level, class: "form-control", step: 0.1
+    = f.number_field :level, class: "form-control", min: 0, step: 1
   .form-group
     = f.label :notes, class: "col-sm-2 control-label"
     = f.text_area :notes, class: "form-control"
