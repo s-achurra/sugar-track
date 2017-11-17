@@ -12,6 +12,11 @@
 			%th Level
 			%th
 			%th
-			%th 
+			%th
 	%tbody
 		= render @posts
+
+= link_to '',
+	new_post_path,
+	id: "new_post",
+	class: 'btn btn-primary btn-lg center-block glyphicon glyphicon-plus'
