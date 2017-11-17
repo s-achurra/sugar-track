@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  def post_data
-    posts = self.posts
+  def post_data(start_date=Date.today-30.days, end_date=Date.today)
+    posts = self.posts.where(created_at: start_date..end_date)
     data = Hash.new
 
     posts.each { |post| data[post.created_at.to_date] = post.level}

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       # TODO: decide if this should go to index or show
-      redirect_to @post
+      redirect_to index
     else
       render :new
     end
