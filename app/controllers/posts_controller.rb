@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.posts
-    @levels = current_user.post_data
+    @levels = current_user.posts_data
   end
 
   def new
@@ -20,6 +20,11 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    @posts = current_user.posts_search
+    render json: @posts
   end
 
   def show
