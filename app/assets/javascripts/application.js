@@ -18,4 +18,6 @@
 //= require chartkick
 //= require moment
 //= require daterangepicker
+//= require raphael
+//= require morris
 //= require_tree .
