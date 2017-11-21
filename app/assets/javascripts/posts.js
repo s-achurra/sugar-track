@@ -5,8 +5,9 @@ $(function() {
 
     function cb(start, end) {
         // TODO: setup callback to update graph
-        console.log(start, end);
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#post-chart').empty()
+        searchPosts({ start_date: start._d, end_date: end._d }).then(data => generateGraph(data));
     }
 
     $('#reportrange').daterangepicker({
@@ -25,3 +26,28 @@ $(function() {
     cb(start, end);
 
 });
+
+const searchPosts = (dates) => (
+  $.ajax({
+    method: 'GET',
+    url: 'search/posts',
+    data: { dates: dates }
+  })
+);
+
+const generateGraph = (data) => {
+  new Morris.Line({
+    // ID of the element in which to draw the chart.
+    element: 'post-chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: data,
+    // The name of the data record attribute that contains x-values.
+    xkey: 'created_at',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['level'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    labels: ['Level']
+  });
+};

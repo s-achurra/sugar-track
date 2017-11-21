@@ -15,7 +15,9 @@ class User < ApplicationRecord
     data
   end
 
-  def posts_search(start_date=Date.today-30.days, end_date=Date.today+1.day)
+  def posts_search(data)
+    end_date = (data[:end_date].to_date || Date.today) + 1.day
+    start_date = data[:start_date].to_date || end_date-31.days
     self.posts.where(created_at: start_date..end_date)
               .select(:id, :created_at, :level)
   end

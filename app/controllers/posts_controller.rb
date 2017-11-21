@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = current_user.posts_search
+    @posts = current_user.posts_search(params.require(:dates).permit(:start_date, :end_date))
     render json: @posts
   end
 
