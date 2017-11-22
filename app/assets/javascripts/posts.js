@@ -1,4 +1,4 @@
-$(function() {
+$(() => {
 
     var start = moment().subtract(29, 'days');
     var end = moment();
@@ -33,9 +33,7 @@ const searchPosts = (dates) => (
     method: 'GET',
     url: 'search/posts',
     data: { dates: dates },
-    success: function(data) {
-      generateGraph(data)
-    }
+    success: (data) => generateGraph(data)
   })
 );
 
@@ -57,6 +55,4 @@ const generateGraph = (data) => {
   });
 };
 
-const toggleLoader = () => {
-  $('#post-chart').toggleClass('loader');
-};
+const toggleLoader = () => $('#post-chart').toggleClass('loader');
