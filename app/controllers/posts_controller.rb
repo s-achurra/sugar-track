@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_posts, only: [:index, :rails_search]
 
   def index
-    @posts = current_user.posts
     @levels = current_user.posts_data
   end
 
@@ -25,6 +25,11 @@ class PostsController < ApplicationController
   def search
     @posts = current_user.posts_search(params.require(:dates).permit(:start_date, :end_date))
     render json: @posts
+  end
+
+  def rails_search
+    @levels = current_user.posts_data(params.require(:post).permit(:start_date, :end_date))
+    render :index
   end
 
   def show
@@ -54,6 +59,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_posts
+    @posts = current_user.posts
   end
 
 end

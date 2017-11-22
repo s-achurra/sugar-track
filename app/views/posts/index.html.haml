@@ -8,6 +8,14 @@
 	%br
 	%span
 %br
+
+= form_tag({controller: 'posts', action: 'rails_search'}, method: 'get', class: 'form-horizontal') do
+	= label_tag(:start_date, "From:")
+	= date_field(:post, :start_date, required: true)
+	= label_tag(:end_date, "To:")
+	= date_field(:post, :end_date, required: true)
+	= submit_tag('Update')
+
 = line_chart @levels
 
 %br
@@ -25,5 +33,5 @@
 
 = link_to '',
 	new_post_path,
-	id: "new_post",
+	id: 'new_post',
 	class: 'btn btn-primary btn-lg center-block glyphicon glyphicon-plus'

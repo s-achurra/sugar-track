@@ -7,7 +7,7 @@ $(() => {
         // TODO: setup callback to update graph
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
         $('#post-chart').empty();
-        toggleLoader();
+        // toggleLoader();
         searchPosts({ start_date: start._d, end_date: end._d });
     }
 
@@ -38,7 +38,7 @@ const searchPosts = (dates) => (
 );
 
 const generateGraph = (data) => {
-  toggleLoader()
+  // toggleLoader()
   new Morris.Line({
     // ID of the element in which to draw the chart.
     element: 'post-chart',
